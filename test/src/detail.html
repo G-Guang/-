@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="scss/base.css">
+        <link rel="stylesheet" href="scss/index.css">
+        <link rel="stylesheet" href="scss/detail.css">
+        <script src="ajax.js"></script>
+    </head>
+    <body>
+     <header>
+        <div class="header_top">
+            <div class="container">
+                    <ul class="fl">
+                            <li class="n"><i class="icons fav fl"></i><a title="收藏药房网商城，下次访问更方便！" id="addFav" href="#">收藏药房网商城</a><s></s></li>
+                                        <li id="weixin"><i class="icons wx fl"></i><a title="关注药房网商城微信公众账号，随时随地查药价！" href="#" rel="nofollow">微信查价</a><s></s><div class="wxbig" style="display: none;"><div class="pic"></div><div class="txt">微信扫描二维码，查药比价更方便！</div></div></li>
+                            <li id="app"><i class="icons app fl"></i><a href="#" target="_blank" title="下载药房网商城APP" rel="nofollow">手机APP</a><div class="appbig" style="display: none;"><div class="pic"></div><div class="txt">药房网商城App，注册就送20元</div></div></li>
+                    </ul> 
+                    <ul class="right" id="TopNav">
+                            <li class="entry_btn">
+                                    <a href="//reg.yaofangwang.com/JoinIn.html">商家入驻</a>
+                                </li>
+                            <li class="daohang">
+                        <a href="javascript:void(0);" class="disa" style="text-decoration:none;">网站导航</a>
+                        <i class="icons dorpdown"></i>        
+                            <div class="line"></div>
+                            <div class="other">
+                                <div class="item">
+                                    <div class="h1">健康咨询</div>
+                                    <a href="//www.yaofangwang.com/news/">医药资讯</a>
+                                    <a href="//www.yaofangwang.com/jibing/">疾病知识</a>
+                                    <a href="//www.yaofangwang.com/yongyao/">用药指导</a>
+                                    <a href="//www.yaofangwang.com/ask/">健康问答</a>
+                                    <a href="//www.yaofangwang.com/disease/">疾病症状库</a>
+                                </div>
+                                <div class="item">
+                                    <div class="h1">特色服务</div>
+                                    <a href="//www.yaofangwang.com/jkzt/">健康专题</a>
+                                    <a href="//www.yaofangwang.com/bk/">健康百科</a>
+                                    <a href="//www.yaofangwang.com/yiyuan/">医院大全</a>
+                                    <a href="//www.yaofangwang.com/yaodian/">药房联盟</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="n"><a href="//www.yaofangwang.com/help/servicecenter.html" class="disa" rel="nofollow">客服中心</a></li><li><a href="javascript:gofavorite();" class="disa">收藏夹</a><s></s></li><li class="person" id="user"> <a href="https://www.yaofangwang.com/manage/Order.aspx" class="fl disa" rel="nofollow">个人中心</a><i class="icons dorpdown"></i><s></s>    <div class="line"></div>    <div class="menu_list" style="display: none;"><a href="https://www.yaofangwang.com/manage/Order.aspx" rel="nofollow">需求管理</a><a href="https://www.yaofangwang.com/manage/User_Center_Address.aspx" rel="nofollow">地址管理</a><a href="https://www.yaofangwang.com/manage/MyConsultation.aspx" rel="nofollow">我的咨询</a><a href="https://www.yaofangwang.com/ask/MyQuestion.aspx" rel="nofollow">我的问答</a><a href="https://www.yaofangwang.com/scan.aspx" rel="nofollow">最近浏览</a>  </div></li><li class="cart" id="cart">  <i class="icons cart"></i><a href="https://www.yaofangwang.com/Cart.aspx" class="hi nline disa" rel="nofollow">需求单（<label id="CartNum">0</label>）</a>   <div class="line"></div>    <div class="cart_box" style="display: none;">您的购物车目前没有任何商品，建议您 <a class="green" href="https://reg.yaofangwang.com/login.aspx">[登录]</a> 查看</div></li><li class="fix"><a href="https://reg.yaofangwang.com/login.aspx" id="a_Referer" rel="nofollow">登录</a> / <a href="https://reg.yaofangwang.com/register.aspx" id="a_Referer_register" rel="nofollow">免费注册</a></li></ul>  
+            </div>
+        </div>
+        <div class="header">
+            <div class="container">
+                    <div class="logo"><a href="//www.yaofangwang.com/" class="name" title="药房网商城(网上药店) "><img src="https://c1.yaofangwang.net/common/images/logo.jpg" alt="药房网商城是专业网上药店(网上药房),经国家药监局认证合法医药网，药品网购就到药房网商城!"></a></div>
+                    <div class="search">
+                            <form method="get" action="//www.yaofangwang.com/search.html" id="search" class="search_input" onsubmit="return false"> 
+                                <ul class="opt_list">
+                                    <li class="current"><a href="javascript:void(0);" rel="search_Yao" action="//www.yaofangwang.com/search.html">商品</a><i></i></li>
+                                    <li><a href="javascript:void(0);" class="cur" rel="search_Shop" action="//www.yaofangwang.com/yaodian/search.html">商家</a><i></i></li>
+                                    <li><a href="javascript:void(0);" rel="search_Mill" action="//www.yaofangwang.com/yaochang/search.html">厂家</a><i></i></li>
+                                    <li><a href="javascript:void(0);" rel="search_Hospital" action="//www.yaofangwang.com/yiyuan/search.html">医院</a><i></i></li>
+                                </ul>
+                                <input type="text" placeholder="请输入批准文号、通用名、商品名、症状" value="" maxlength="60" autocomplete="off" id="keyword" class="txt">
+                                <button type="button" class="submit" id="btn_submit">搜索</button>
+                                <div class="suggest" id="result"></div>
+                            </form>
+                            <ul id="hot_search" class="hot_search clearfix"><li class="noborder highlight"><a href="https://www.yaofangwang.com/medicine-584398.html" title="拜阿司匹灵">拜阿司匹灵</a></li><li class="highlight"><a href="https://www.yaofangwang.com/search.html?keyword=%e8%a1%a5%e8%a1%80" title="补血">补血</a></li><li><a href="https://www.yaofangwang.com/search/13791.html" title="999">999</a></li><li class="highlight"><a href="https://www.yaofangwang.com/search/39735.html" title="片仔癀">片仔癀</a></li><li><a href="https://www.yaofangwang.com/search.html?keyword=%e5%a6%88%e5%af%8c%e9%9a%86" title="妈富隆">妈富隆</a></li><li class="highlight"><a href="https://www.yaofangwang.com/search/11442.html" title="阿胶">阿胶</a></li><li><a href="https://www.yaofangwang.com/search/30642.html" title="金戈">金戈</a></li><li><a href="https://www.yaofangwang.com/search/50493.html" title="汤臣倍健">汤臣倍健</a></li></ul>
+                        </div>
+                    <div class="promise"><a href="//www.yaofangwang.com/promise.html" title="第三方药品交易服务平台,一站多店式药品订购体验,严格审核正规药房供货"></a></div>
+                </div>
+        </div>
+    </header>
+
+
+        <div class="nav2">
+        <div class="container">
+            <ul class="mainnav">
+            <li class="category"><a href="javascript:void(0);">全部商品分类</a></li>
+            <li class="home"><a id="home" href="#">首页</a></li>
+            <li><a id="yao" href="#" title="药品超市">药品超市</a></li>
+            <li><a id="yaodian" href="" title="药房联盟">药房联盟</a></li>
+            <li><a id="yiyuan" href="" title="医院大全">医院大全</a></li>
+            <li><a id="news" href="" title="医药资讯">医药资讯</a></li>
+            <li><a id="ask" href="" title="健康问答">健康问答</a></li>
+        </ul>
+        
+        
+    </div>
+    </div>
+
+    <div class="maininfo2 clearfix">
+        <div class="left">
+            <a class="bigpic" rel="gal1" href="https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/07ba02bf-0ed4-4f07-84bf-ba7a721c58a55196.jpg_syp.jpg" title="" style="outline-style: none; text-decoration: none;"><div class="zoomPad"><img class="imgzoom" src="https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/07ba02bf-0ed4-4f07-84bf-ba7a721c58a55196.jpg_syp.jpg" alt="邦迪 卡通防水创可贴_上海强生" title="" style="opacity: 1;"><div class="zoomPup" style="top: 162.5px; left: 138px; width: 280px; height: 219px; position: absolute; border-width: 1px; display: none;"></div><div class="zoomWindow" style="position: absolute; z-index: 5001; left: 429px; top: 0px; display: none;"><div class="zoomWrapper" style="width: 535px;"><div class="zoomWrapperTitle" style="width: 100%; position: absolute; display: none;"></div><div class="zoomWrapperImage" style="width: 100%; height: 419px;"><img src="https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/07ba02bf-0ed4-4f07-84bf-ba7a721c58a55196.jpg_syp.jpg" style="position: absolute; border: 0px; display: block; left: -265.394px; top: -312.172px;"></div></div></div><div class="zoomPreload" style="visibility: hidden; top: 188px; left: 164.5px; position: absolute;"></div></div><span class="imgTip">温馨提醒：商品包装因厂家更换频繁，如有不符请以实物为准。</span></a>
+            <div class="piccontainer clearfix"><div class="pic_list clearfix" id="thumblist" style="width: 460px;"><a href="javascript:void(0)" class="p first" title="卡通防水创可贴(邦迪)包装主图" rel="{gallery: 'gal1', smallimage: 'https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/07ba02bf-0ed4-4f07-84bf-ba7a721c58a55196.jpg_syp.jpg',largeimage: 'https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/07ba02bf-0ed4-4f07-84bf-ba7a721c58a55196.jpg_syp.jpg'}"><img alt="卡通防水创可贴（邦迪）包装主图" src="https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/07ba02bf-0ed4-4f07-84bf-ba7a721c58a55196.jpg_120x120.jpg"></a><a href="javascript:void(0)" class="p" title="卡通防水创可贴(邦迪)包装侧面图1" rel="{gallery: 'gal1', smallimage: 'https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/a7869112-60b0-4a49-9295-87e03009aa2c7423.jpg_syp.jpg',largeimage: 'https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/a7869112-60b0-4a49-9295-87e03009aa2c7423.jpg_syp.jpg'}"><img alt="卡通防水创可贴（邦迪）包装侧面图1" src="https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/a7869112-60b0-4a49-9295-87e03009aa2c7423.jpg_120x120.jpg"></a><a href="javascript:void(0)" class="p" title="卡通防水创可贴(邦迪)包装侧面图2" rel="{gallery: 'gal1', smallimage: 'https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/03ec827e-ae07-4424-800f-a79bc34cca7c7110.jpg_syp.jpg',largeimage: 'https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/03ec827e-ae07-4424-800f-a79bc34cca7c7110.jpg_syp.jpg'}"><img alt="卡通防水创可贴（邦迪）包装侧面图2" src="https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/03ec827e-ae07-4424-800f-a79bc34cca7c7110.jpg_120x120.jpg"></a><a href="javascript:void(0)" class="p" title="卡通防水创可贴(邦迪)包装侧面图3" rel="{gallery: 'gal1', smallimage: 'https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/e4515aef-29c5-4560-9629-c987824642d42094.jpg_syp.jpg',largeimage: 'https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/e4515aef-29c5-4560-9629-c987824642d42094.jpg_syp.jpg'}"><img alt="卡通防水创可贴（邦迪）包装侧面图3" src="https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/e4515aef-29c5-4560-9629-c987824642d42094.jpg_120x120.jpg"></a><a href="javascript:void(0)" class="p" title="卡通防水创可贴(邦迪)包装细节图1" rel="{gallery: 'gal1', smallimage: 'https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/50726ce3-0b73-45f5-8e8c-92dc9aa3181a9023.jpg_syp.jpg',largeimage: 'https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/50726ce3-0b73-45f5-8e8c-92dc9aa3181a9023.jpg_syp.jpg'}"><img alt="卡通防水创可贴（邦迪）包装细节图1" src="https://c1.yaofangwang.net/Common/Upload/Medicine/638/638445/50726ce3-0b73-45f5-8e8c-92dc9aa3181a9023.jpg_120x120.jpg"></a></div></div>
+            <div class="share clearfix">
+                <div class="ids">商品编号：638445</div>
+                <div class="fx"><div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a></div></div>
+                <a class="item f" id="aFavorite"><b class="icons"></b><em>收藏该商品</em></a>
+            </div>
+        </div>
+        <div class="center">
+            <h1>
+                
+                <strong>邦迪 卡通防水创可贴 </strong>
+            </h1>
+            <div class="appad">
+                 
+                 <a target="_blank" href="//www.yaofangwang.com/app/index.html" class="i2" rel="nofollow">下载App领20元优惠券</a>
+            </div>
+            <div class="info clearfix">
+                <dl>
+                    <dt class="l">通&nbsp;用&nbsp;名</dt><dd class="w2 l"><strong>卡通防水创可贴</strong></dd>
+                    <dt class="l">商品品牌</dt><dd class="w3 l">邦迪<span class="z" id="pz">[注]</span><div class="tip" id="amore2"></div></dd>
+                    <dt class="l">包装规格</dt><dd class="w2n l"><div class="downup" id="standardOther">
+                        <div class="now">58mmx18.2mmx8片/盒<i class="icons"></i></div>
+                        <div class="line"></div>
+                        <ul class="other"><li><a href="//www.yaofangwang.com/detail-7379862.html">58mmx18.2mmx8片/盒（贴剂(条形)）</a></li><li><a href="//www.yaofangwang.com/detail-5947188.html">58mmx18.2mmx8片/盒（贴剂(米妮系列)）</a></li></ul>
+                        </div></dd>
+                    <dt class="l">剂型/型号</dt><dd class="w3 l">贴剂(冰雪奇缘系列)</dd>
+                    <dt>生产企业</dt><dd class="w1">上海强生有限公司</dd>
+                    
+                </dl>
+                <div class="prices clearfix">
+                <dl class="price h2" id="pricedl">  
+                    
+                        <dt>优惠活动</dt> <dd class="w1 active">满免邮活动优惠<i></i></dd>
+                        <dt>零售价格</dt><dd class="w1"><div class="money fsize18">¥<span class="num v-mid">7.50</span></div></dd>
+                       
+                    
+                <dd style="display:none;" class="full" id="mjf">
+                <p class="t1"><span class="c">满免邮活动优惠</span><span class="sq">收起<i class="icons"></i></span></p>
+                
+                    <div><p class="title clearfix"><span class="name">满199 免首重</span><span class="d">2018.07.02  - 2018.09.30<i class="icons"></i></span></p>
+                    
+                        <p class="t2"><i class="dot"></i>订单金额满<label>199</label>元，立减后满<label>199</label>元卖家包首重运费（<label class="hui">除：新疆、西藏、海南省、四川省、甘肃省、青海省、贵州省、云南省、内蒙古、黑龙江地区</label>）</p>
+                        <p class="t2"><i class="dot"></i>订单金额满<label>299</label>元，立减后满<label>299</label>元卖家包首重运费</p>
+                          
+                    </div>
+                </dd></dl>
+                
+                <div class="qrcode">
+                    <i class="icons"></i>手机扫一扫<s class="icons"></s>
+                    <div class="code"><img src="https://www.yaofangwang.com/common/handler/QRCode.ashx?type=2&amp;id=5947213" alt="卡通防水创可贴（邦迪）价格比价更便捷"><div class="txt">查药比价更方便</div></div>
+                </div>
+                </div>
+                
+                
+                <dl>
+                    <dt>运&nbsp;&nbsp;&nbsp;&nbsp;费</dt><dd class="w1">
+                        <div class="downup" id="regionContainer">
+                            <div class="now" id="regionSelect">至 广州<i class="icons"></i></div><div class="line"></div>
+                        <div class="reginbox big" id="areaDiv"><div class="dline" id="areaLine" style="display: none;"></div><ul id="citys"></ul><div class="dline" id="areaLine2" style="display: none;"></div><ul id="xians"></ul></div></div><span class="par" id="shopPrice">&nbsp;免运费</span>
+                    </dd>
+                </dl>
+                <dl class="h2"><dt>需求数量</dt><dd class="w1"><span class="quantity"><a class="sub dis"  id="buyminus"></a><input type="text" class="num" value="1" id="quantity"><a class="add"  id="buyplus"></a></span><span class="par">库存：<label id="reserve">12</label>盒</span></dd></dl>
+                <div class="mainop clearfix"><a href="javascript:void(0);" class="ibtn2" id="buy">立即购买</a> <a  class="ibtn1" id="addcart">加入购物车</a></div> 
+                
+                <div class="sinfo clearfix">
+                    <p class="hui">该报价由：苏州全值药房连锁有限公司 发布，商家承诺：</p>
+                    <div class="spec clearfix">
+                         
+                        <span><label style="color:#008800;">24小时发货</label></span>
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right saleinfo" style="height:508px;">
+            <div class="title">
+                <p class="np"><a rel="nofollow" href="https://www.yaofangwang.com/yaodian/349680/"><img src="https://c1.yaofangwang.net/Common/Upload/ShopImage/349/349680/813789dc-68c5-431e-880f-36da8b214f261505.jpg_160x80.jpg" alt="苏州全值药房连锁有限公司"></a></p>
+                <p id="morebtn" class="pr">苏州全值药房连锁有限公司<i class="icons"></i></p>
+            </div>
+            <div style="display:block;" class="detail" id="maininfo">
+                 
+                <div class="pf clearfix">
+                    <dl><dt>服务</dt><dd>4.9</dd></dl>
+                    <dl><dt>发货</dt><dd>4.8</dd></dl>
+                    <dl><dt>物流</dt><dd>4.8</dd></dl>
+                    <dl class="nr"><dt>包装</dt><dd>4.8</dd></dl>
+                </div>
+                <p>店铺评分：<span class="star"><label style="width:96.0%;"></label></span><label class="num fa">4.8</label></p>
+                <p>退&nbsp;&nbsp;单&nbsp;&nbsp;率：<label class="fa">0.2%</label></p>
+                <p>发货时长：<label class="fa">10.2</label>小时</p>
+                
+
+                <p>营业时间：<label class="fa">9:00-21:00</label></p>
+                <p style="overflow: hidden; max-height: 70px;">店铺地址：江苏省苏州市工业园区218号生物纳米园A1南座501</p>
+            </div>
+            <div style="display:none;" class="detail" id="subinfo">
+                <div class="zz clearfix"><i class="zong" title="连锁总店"></i><i class="gsp" title="GSP已验证"></i><i class="yyzz" title="营业执照已验证"></i><i class="jyxkz" title="经营许可证已验证"></i><i class="qixie" title="医疗器械许可证已验证"></i><i class="zzjg" title="组织机构代码已验证"></i><i class="swdj" title="税务登记证已验证"></i></div>
+                <p>营业执照：91320594051863674X</p><p>GSP证号：B-JS14-036</p>
+                <p>经营许可证：苏BA5122100</p>
+                <p>经营范围：中成药、中药饮片、化学药制剂、抗生素制剂、生化药品、生物制品。</p>
+            </div>
+            
+              <div class="enter2 clearfix"> 
+                  
+              </div>
+            <div class="go"><a href="//www.yaofangwang.com/yaodian/349680/" rel="nofollow">进入店铺</a></div>
+        </div>
+    </div>
+    <script type="text/javascript"> 
+
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = location.search.slice(1).split('=');
+        var gid = r[1];
+             
+              
+        document.addEventListener('DOMContentLoaded', function(){
+         
+        var xhr = new XMLHttpRequest();
+        xhr.open("get","datail.php?gid="+gid,true);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        xhr.send();
+        xhr.onreadystatechange=function(){
+
+            if(xhr.readyState==4){
+            if(xhr.status==200){
+                var data=JSON.parse(xhr.responseText);
+                console.log(data);
+
+                var img = document.getElementsByClassName('imgzoom')[0];
+                img.src  = data.data1[0].url;
+
+                var name = document.getElementsByTagName('strong');
+                name[0].innerHTML = data.data1[0].name;
+                name[1].innerHTML = data.data1[0].name;
+
+                var price = document.getElementsByClassName('v-mid')[0];
+                price.innerHTML = data.data1[0].price;
+
+                var btn = document.getElementById('addcart');
+                btn.onclick = function(){
+                    window.location = 'car.html'; 
+                }
+                     
+                     
+                     
+                     
+        }
+      }
+    }
+
+    var qty = document.getElementsByClassName('quantity')[0];
+    var qtyVal = document.getElementById('quantity');
+         
+     
+    
+    qty.onclick = function(e){
+        target = e.target;
+        var val = document.getElementById('quantity').value * 1;
+        
+        if (target.id == 'buyminus'){
+            val = val - 1;
+            if(val <= 0){
+                qtyVal.setAttribute('value','0'); 
+            }else{
+                qtyVal.setAttribute('value',val); 
+            } };
+
+        if (target.id == 'buyplus') {
+             val = val + 1;
+             qtyVal.setAttribute('value',val);
+            };
+        
+    }
+
+    var addcar = document.getElementById('addcart');
+    
+    addcar.onclick = function(){
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open("get","http://10.3.136.18:84/addcar.php?gid="+gid+"&qty="+qtyVal.value,true);
+        xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+        xhr.send();
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4){
+            if(xhr.status==200){
+               var data=JSON.parse(xhr.responseText);
+               console.log(data);
+                    
+           window.location.href = "car.html";
+
+            }
+        }
+    }
+        }
+         
+        })
+    </script>
+    </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人会员注册_会员注册_药房网商城</title>
+    <link rel="stylesheet" href="../scss/base.css">
+    <link rel="stylesheet" href="../scss/register.css">
+    <script src="ajax.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="header_top">
+            <div class="container">
+                <ul class="fl">
+                    <li class="fl">
+                        <i class="icons wx fl"></i>
+                        <a  href="#" title="关注药房网商城微信公众账号，随时随地查药价！">微信查价</a>
+                        <s></s>
+                    </li>
+                    <li class="fl">
+                        <i class="icons app fl"></i>
+                        <a href="#" title="下载药房网商城APP" >手机APP</a>
+                    </li>
+                </ul>
+                <ul class="fr" id="TopNav">
+                        <li class="daohang fr">
+                                <i class="icons dorpdown fr"></i>
+                                <a href="#" class="disa fr">网站导航</a>
+                        </li>
+                        <li class="fr">
+                                <a href="#">客服中心</a>
+                        </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header_bottom">
+            <div class="container">
+                    <div class="logo fl" style="width:345px;">
+                            <a href="#" class="name fl" title="药房网商城(网上药店) "><img src="../img/logo.jpg" alt="药房网商城是专业网上药店(网上药房),经国家药监局认证合法医药网，药品网购就到药房网商城!"></a>
+                            <div class="sub fl"><span class="sub_name">用户注册</span></div>
+                    </div>
+            </div>
+        </div>
+    </header>
+    <div class="register">
+        <div class="container">
+            <div class="form">
+                <ul class="navul">
+                    <li class="first">
+                        <a href="#" class="cur">个人用户<i></i></a>
+                    </li>
+                    <li class="second"><a href="#" class="">商家入驻<i></i></a>
+                    </li>
+                </ul>
+                <div class="items">
+                    <ul class="iform">
+                        <li class="line">
+                            <label>注册信息（必填项）</label>
+                        </li>
+                        <li>
+                            <span class="note"><label>*</label>用户名：</span><span class="bginput"><i class="user"></i><input id="username"  type="text" maxlen="18" minlen="2" maxlength="18" class="input_big" errinfo="" info="请输入你的用户名，2-18个字符，且不能输入特殊符号和空格"></span><span class="oninfo"></span>
+                        </li>
+                        <li><span class="note"><label>*</label>登录密码：</span><span class="bginput"><i class="pass"></i><input id="pwd" type="pwd"  rege="/^(?![0-9]+$)(?![a-zA-Z]+$)/" maxlen="20" minlen="6" maxlength="20" class="input_big" errinfo="" info="请输入您的登录密码，6-20位数字和字符组合，两边不能有空符号"></span><span class="oninfo"></span>
+                        </li>
+                        <li><span class="note"><label>*</label>确认密码：</span><span class="bginput"><i class="pass"></i><input type="password" rege="/^(?![0-9]+$)(?![a-zA-Z]+$)/" maxlen="20" minlen="6" maxlength="20" class="input_big" errinfo="" info="请输入您的确认密码，6-20位数字和字符组合，必须和密码相等"></span><span class="oninfo"></span></li>
+                        <li><span class="note"><label>*</label>手机号码：</span><span class="bginput"><input name="ctl00$ContentPlaceHolder1$Mobile" type="text" id="ctl00_ContentPlaceHolder1_Mobile" rege="/^(1)[0-9]{10}$/" maxlen="11" minlen="11" maxlength="11" class="input_big s" errinfo="" store="" info="请输入您的手机号码，11位数字"></span><span class="oninfo"></span></li>
+                        <li><span class="note"><label>*</label>手机验证码：</span><span class="bginput"><input name="ctl00$ContentPlaceHolder1$txtMobileCode" type="text" id="ctl00_ContentPlaceHolder1_txtMobileCode" rege="" maxlen="6" minlen="6" maxlength="6" class="input_big s" errinfo="" style="width:172px;" info="请输入6位手机验证码"></span><span class="bginput"><a href="javascript:void(0);" class="btn9 fl" id="btn_yzm">发送验证码</a></span><span class="bginput"><a id="btn_yzm_voice" class="btn11 fl" href="javascript:void(0);" style="display:none;">收不到短信？使用语音验证码</a></span><span class="oninfo"></span></li>
+                        <li class="line"><label>个人信息（选填项）</label></li>
+                        <li><span class="note">真实姓名：</span><span class="bginput"><input name="ctl00$ContentPlaceHolder1$RealName" type="text" id="ctl00_ContentPlaceHolder1_RealName" rege="/^([\u4E00-\u9FA5]+|[a-zA-Z]+)$/" maxlen="16" minlen="2" maxlength="60" class="input_big s" check="false" errinfo="" info="请输入您的真实姓名，至少2个字符"></span><span class="oninfo"></span></li>
+                        <li><span class="note">电子邮箱：</span><span class="bginput"><input name="ctl00$ContentPlaceHolder1$txtEmail" type="text" id="ctl00_ContentPlaceHolder1_txtEmail" rege="/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/" maxlen="100" minlen="6" maxlength="100" class="input_big s" check="false" errinfo="" info=" 请输入您的电子邮箱，格式如：xxx@qq.com，6-100个字符"></span><span class="oninfo"></span></li>
+                        <li class="display:none;"><span class="note">固定电话：</span><span class="bginput"><input name="ctl00$ContentPlaceHolder1$phone1" type="text" id="ctl00_ContentPlaceHolder1_phone1" rege="/^[0-9]\d{2,3}$/" maxlen="4" minlen="3" maxlength="4" class="input_big s" check="false" errinfo="" style="width:60px;" par="txt" info="电话区号3或4位数字"></span><span class="oninfo"></span><span class="bginput">&nbsp;&nbsp;- &nbsp;<input name="ctl00$ContentPlaceHolder1$phone2" type="text" id="ctl00_ContentPlaceHolder1_phone2" rege="/^[0-9]\d{6,7}$/" maxlen="8" minlen="7" maxlength="8" class="input_big s" check="false" errinfo="" style="width:175px;" info="电话号码7或8位数字（可选填）"></span><span class="oninfo"></span></li>
+                        <li><span class="note">所在地区：</span><span class="bginput"><input type="hidden" name="ctl00$ContentPlaceHolder1$hf_accountRegionId" id="ctl00_ContentPlaceHolder1_hf_accountRegionId"><select id="accountProvince" class="iselect big" info="请选择您的所在地区" errinfo="" rege="" check="false"><option value="-1">-请选择-</option><option value="40">北京市</option><option value="4821">天津市</option><option value="95">上海市</option><option value="96">重庆市</option><option value="97">黑龙江</option><option value="1265">吉林省</option><option value="1316">辽宁省</option><option value="1377">河北省</option><option value="1525">山西省</option><option value="1633">内蒙古</option><option value="1726">江苏省</option><option value="1792">浙江省</option><option value="1862">安徽省</option><option value="1942">福建省</option><option value="2011">江西省</option><option value="2103">山东省</option><option value="2212">河南省</option><option value="2339">湖北省</option><option value="2418">湖南省</option><option value="2521">广东省</option><option value="2610">广西</option><option value="2700">海南省</option><option value="2721">四川省</option><option value="2882">贵州省</option><option value="2970">云南省</option><option value="3112">西藏</option><option value="3192">陕西省</option><option value="3302">甘肃省</option><option value="3388">青海省</option><option value="3436">宁夏</option><option value="3442">新疆</option></select>&nbsp;&nbsp;<select id="accoutCity" class="iselect big disp"></select>&nbsp;&nbsp;<select id="accountDistrict" class="iselect big disp"></select></span><span class="oninfo"></span><input type="hidden" name="ctl00$ContentPlaceHolder1$hf_lat" id="ctl00_ContentPlaceHolder1_hf_lat"><input type="hidden" name="ctl00$ContentPlaceHolder1$hf_lng" id="ctl00_ContentPlaceHolder1_hf_lng"></li>
+                        <li><span class="note">详细地址：</span><span class="bginput"><input name="ctl00$ContentPlaceHolder1$txtAddress" type="text" id="ctl00_ContentPlaceHolder1_txtAddress" rege="" placeholder="填写详细的街道名及门牌号、楼宇名及房间号" maxlen="128" minlen="1" maxlength="128" class="input_big s" check="false" errinfo="" style="width:440px;background:#fbfbfb;" disabled="disabled" info="请输入完整的详细地址信息，两边不能有空符号"></span><span class="oninfo"></span></li>
+                        <li class="license"><div class="ckdiv"><div class="ck"><i class="checked"></i></div>我同意</div><a href="https://reg.yaofangwang.com/common/inc/agreement.html">《药房网商城入驻用户服务协议》</a></li>
+                        <li class="op"><a id="ctl00_ContentPlaceHolder1_BtnSubmit" class="btn2 b2" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$BtnSubmit','')">立即注册</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <button>
+            <div class="container">
+                <div class="button_top">
+                        <p>
+                                <a href="#" target="_blank" rel="nofollow">关于我们</a> | 
+                                <a href="#" target="_blank" rel="nofollow">资质证书</a> | 
+                                <a href="#" target="_blank" rel="nofollow">商家入驻</a> |
+                                <a href="#" target="_blank" rel="nofollow">联系我们</a> | 
+                                <a href="#" target="_blank" rel="nofollow">工作机会</a> | 
+                                <a href="#" target="_blank" rel="nofollow">帮助中心</a> | 
+                                <a href="#" target="_blank" rel="nofollow">法律声明</a> |  
+                                <a href="#" target="_blank">网站地图</a> | 
+                                <a href="#" target="_blank">友情链接</a> |  
+                                <a href="#" target="_blank">在售商品</a> |  
+                                <a href="#" target="_blank">下架商品</a> |  
+                                <a href="#" target="_blank">商品索引</a> |  
+                                <a href="#" target="_blank">商品分类</a> |  
+                                <a href="#" target="_blank">热门搜索</a>
+                        </p>
+                </div>
+                <span class="fl first">
+                    互联网药品信息服务资格证编号:
+                    <a href="#" target="_blank">(沪)-经营性-2017-0003</a>
+                    ICP备案号:沪ICP备07012885号
+                    <img src="../img/gaba.png">
+                    沪公网安备 31011502002155号
+                    <p class="copy">©2007-2018 药房网商城版权所有&nbsp;&nbsp;上海伊邦医药信息科技有限公司</p>
+                    <p>本网站用字经北京北大方正电子有限公司授权许可</p>
+                </span>
+                
+            </div>
+        </button>
+
+        <script>
+           
+            
+            document.getElementById('ctl00_ContentPlaceHolder1_BtnSubmit').onclick = function(){
+                var params = {
+                    username: document.getElementById('username').value,
+                    pwd: document.getElementById('pwd').value
+                }
+                $.ajax({
+                    api: 'register.php',
+                    method: 'post',
+                    params,
+                    success: function(res){
+                        console.log(res)
+                        var r = window.eval('(' + res + ')');
+                        if(r.status){
+                            window.location.href = 'login.html';
+                        }
+                    }
+                })
+            }
+        </script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="ajax.js"></script>
+</head>
+<body>
+    <p>
+        <label for="">用户名</label>
+        <input type="text" name="" id="username">
+    </p>
+    <p>
+        <label for="">密码</label>
+        <input type="text" name="" id="pwd">
+    </p>
+    <p>
+        <label for="">年龄</label>
+        <input type="text" name="" id="age">
+    </p>
+    <p>
+        <label for="">性别</label>
+        <input type="text" name="" id="gender">
+    </p>
+    <p>
+        <label for="">地址</label>
+        <input type="text" name="" id="address">
+    </p> 
+    <p>
+        <input type="button" value="注册" id="btn_register">
+    </p>
+
+    <script>
+        document.getElementById('btn_register').onclick = function(){
+            var params = {
+                username: document.getElementById('username').value,
+                pwd: document.getElementById('pwd').value
+            }
+            $.ajax({
+                api: 'register.php',
+                method: 'post',
+                params,
+                success: function(res){
+                    console.log(res);
+                }
+            })
+        }
+    </script>
+</body>
+</html> -->

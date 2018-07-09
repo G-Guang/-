@@ -1,0 +1,289 @@
+.header_top{    
+    height: 40px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #f4f4f4;
+    color: #666;
+    line-height: 40px;
+    _overflow: hidden;
+    min-width: 1190px;
+    position: relative;
+    z-index: 400;
+}
+.header_top li{
+    position: relative;
+    float: left;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+    z-index: 9997;
+}
+.header_top li i{
+    display: block;
+    margin: 10px 5px 10px 0;
+    width: 20px;
+    height: 20px;
+}
+.header_top .fl li a{
+    white-space: nowrap;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    display: block;
+    color: #333;
+}
+.header_top .icons.wx{
+    background-position: -49px -3px;
+}
+.header_top li s{
+    float: left;
+    display: block;
+    margin: 10px 10px 10px 10px;
+    width: 1px;
+    height: 20px;
+    border-right: 1px solid #e5e5e5;
+    font-size: 0;
+    overflow: hidden;
+}
+.header_top .icons.app{
+    background-position: -68px -3px;
+}
+.header_top .icons.dorpdown {
+    background-position: -121px 1px;
+    margin-right: 0;
+}
+.header_top .fr li {
+    float: right;
+    width: 80px;
+}
+.header_top .fr li a{
+    color: #333;
+}
+header .logo {
+    margin-top: 24px;
+}
+header .logo .sub {
+    float: left;
+    margin: 10px;
+    padding-left: 15px;
+    height: 55px;
+    border-left: 1px solid #e5e5e5;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: "\5FAE\8F6F\96C5\9ED1";
+    line-height: 55px;
+}
+header .logo .sub_name {
+    color: #666;
+    white-space: nowrap;
+}
+.header_bottom{
+    height: 120px;
+}
+header .step.s1 {
+    background-position: -29px -14px;
+}
+header .step {
+    background-image: url(../img/step.png);
+    height: 70px;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 30px;
+    width: 425px;
+    display: none;
+    background-position: -29px -14px;
+}
+.container {
+    position: relative;
+    margin: 0 auto 0;
+    width: 1190px;
+    height: 140px;
+}
+.wrap{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 120px;
+    left: 0px;
+}
+.cur{
+    display: block;
+    height: 50px;
+    width: 105px;
+    background: #0CB95F;
+    line-height:50px;
+    text-align:center;
+    font-size:14px;
+    color: #FFFFFF;
+}
+.table01,.table02{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 15px;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.table01 .w1 {
+    width: 50px;
+}
+.table01 td {
+    line-height: 30px;
+    padding: 10px 0;
+}
+.table01 td, .table02 td, .table03, .table04, .table05 td {
+    text-align: left;
+}
+.ck {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-position: -41px -25px;
+    vertical-align: middle;
+    position: relative;
+    background-image: url(../img/.icons);
+}
+.table01 .w2 {
+    width: 100px;
+}
+.table01 td, .table02 td, .table03, .table04, .table05 td {
+    text-align: left;
+}
+.table01 .w4 {
+    width: 190px;
+    text-align: right;
+    padding-right: 50px;
+}
+.table01 .w5 {
+    width: 130px;
+    text-align: center;
+}
+.table01 .w6 {
+    width: 80px;
+    text-align: right;
+    padding-right: 50px;
+}
+.table01 .w7 {
+    width: 120px;
+    text-align: center;
+    padding-right: 30px;
+}
+.table02 .w1 {
+    width: 50px;
+}
+.table02 td {
+    padding: 15px 0;
+    border-bottom: 1px dotted #ddd;
+}
+.table02 .w2 {
+    width: 100px;
+}
+.table02 .w2 a {
+    border: 1px solid #e5e5e5;
+    display: block;
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+.table02 .w3 a {
+    line-height: 20px;
+}
+.table02 p {
+    color: #999;
+    line-height: 22px;
+}
+.table02 .w4 {
+    width: 100px;
+    text-align: right;
+    padding-right: 50px;
+}
+.money2 {
+    color: #333;
+    font-style: normal;
+    font-family: Arial;
+}
+.table02 .w5 {
+    width: 130px;
+    text-align: center;
+}
+.table02 .w5 .quantity {
+    float: none;
+    display: block;
+}
+.quantity {
+    float: left;
+    display: block;
+    width: 90px;
+    _width: 92px;
+    height: 22px;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 22px;
+}
+.table02 .w6 {
+    width: 100px;
+    text-align: right;
+    padding-right: 30px;
+}
+.money {
+    color: #e50000;
+    font-style: normal;
+    font-family: Arial;
+}
+.table02 .w7 {
+    width: 120px;
+    text-align: right;
+    padding-right: 30px;
+}
+.table02 .w7 a {
+    color: #999;
+    margin-left: 15px;
+}
+.table02 .w2 img {
+    width: 70px;
+    height: 70px;
+    margin: 5px;
+}
+.quantity a.dis.sub {
+    background-position: -165px -105px;
+}
+.quantity a.sub {
+    background-position: -165px -79px;
+}
+.quantity a.dis {
+    background-color: #e5e5e5;
+}
+.quantity a {
+    float: left;
+    display: inline-block;
+    width: 24px;
+    height: 22px;
+    background-color: #fff;
+    background-image: url(../img/icons.png);
+    text-decoration: none;
+    line-height: 22px;
+}
+.quantity a.add {
+    background-position: -192px -79px;
+}
+.quantity input {
+    float: left;
+    width: 40px;
+    height: 22px;
+    _height: 23px;
+    border: 0;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    text-align: center;
+    font-family: Arial;
+    line-height: 22px;
+    _line-height: 23px;
+}
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="scss/base.css">
+        <link rel="stylesheet" href="scss/car.css">
+        <script src="ajax.js"></script>
+    </head>
+    <body>
+            <header>
+                    <div class="header_top">
+                        <div class="container">
+                            <ul class="fl">
+                                <li class="fl">
+                                    <i class="icons wx fl"></i>
+                                    <a  href="#" title="关注药房网商城微信公众账号，随时随地查药价！">微信查价</a>
+                                    <s></s>
+                                </li>
+                                <li class="fl">
+                                    <i class="icons app fl"></i>
+                                    <a href="#" title="下载药房网商城APP" >手机APP</a>
+                                </li>
+                            </ul>
+                            <ul class="fr" id="TopNav">
+                                    <li class="daohang fr">
+                                            <i class="icons dorpdown fr"></i>
+                                            <a href="#" class="disa fr">网站导航</a>
+                                    </li>
+                                    <li class="fr">
+                                            <a href="#">客服中心</a>
+                                    </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header_bottom">
+                        <div class="container">
+                                <div class="h_top fl">
+                                        <div class="logo fl" style="width:345px;">
+                                                <a href="#" class="name fl" title="药房网商城(网上药店) "><img src="img/logo.jpg" alt="药房网商城是专业网上药店(网上药房),经国家药监局认证合法医药网，药品网购就到药房网商城!"></a>
+                                                <div class="sub fl"><span class="sub_name">需求清单</span></div>
+                                        </div>
+                                        <div class="step s1" style="display: block;"></div>
+                                </div>
+                                <div class="wrap">
+                                    <div class="tabnav">                      
+                                            <a class="cur" >商品列表</a>
+                                    </div>
+                                    <table class="table01">
+                                        <tbody>
+                                            <tr>
+                                                <td class="w1">
+                                                    <div class="ck" id="checkAll"><i class="checked"></i></div>
+                                                </td>
+                                                <td class="w2">
+                                                    <span id="checkAlltxt">全选</span>
+                                                </td>
+                                                <td class="w3">商品信息</td>
+                                                <td class="w4">单价（元）</td>
+                                                <td class="w5">数量</td>
+                                                <td class="w6">小计（元）</td>
+                                                <td class="w7">操作</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="gg_car">
+                                        
+                                    </div>
+                                    
+
+                                    
+                                </div>
+                        </div>
+                    </div>
+                </header>
+
+                <script type="text/javascript">
+                
+
+                document.addEventListener('DOMContentLoaded', function(){
+                    var car = document.getElementsByClassName('gg_car')[0];
+
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("get","car.php",true);
+                    xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");
+                    xhr.send();
+                    xhr.onreadystatechange=function(){
+
+                    if(xhr.readyState==4){
+                    if(xhr.status==200){
+                        var data=JSON.parse(xhr.responseText);
+                        var html = '';
+                        console.log(data.data1);
+                             
+                             for(var i = 0;i<data.data1.length;i++){
+
+                                var name  = data.data1[i].name;
+                                var price = data.data1[i].price;
+                                var url   = data.data1[i].url;
+                                var qty   = data.data1[i].qty;
+
+                                 html  +=  `
+                                            <table class="table02">
+                                                <tbody>
+                                                    <tr class="carid_1">
+                                                        <td class="w1">
+                                                            <div class="ck" id="m_cb_349680s-1_0"><i class="checked"></i></div>
+                                                        </td>
+                                                        <td class="w2">
+                                                            <a target="_blank" href="https://www.yaofangwang.com/detail-5947213.html"><img src="${url}"></a>
+                                                        </td>
+                                                        <td class="w3">
+                                                            <a target="_blank" class="clearfix" href="https://www.yaofangwang.com/detail-5947213.html"><strong>${name}</strong></a>
+                                                            <p>规格：58mmx18.2mmx8片/盒</p>
+                                                            <p>厂家：上海强生有限公司</p>
+                                                        </td>
+                                                        <td class="w4">
+                                                            <span class="money2" price="7.50">¥${price}</span>
+                                                        </td>
+                                                        <td class="w5">
+                                                            <span class="quantity">
+                                                                <a class="sub jian dis" href="javascript:void(0);" return="jian" zhek="1.0000"></a>
+                                                                <input type="text" class="num" value="${qty}" par="quantity" parc="1" smid="5947213" mid="638445" sid="349680" smpid="0" ques="1">
+                                                                <a class="add jia" href="javascript:void(0);" return="jia" zhek="1.0000"></a>
+                                                            </span>
+                                                        </td>
+                                                        <td class="w6">
+                                                                <span class="money">¥7.50<br></span>
+                                                        </td>
+                                                        <td class="w7">
+                                                                <a href="javascript:void(0);" par="del" parc1="1" smpid="0" paras="349680s-1">删除</a>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            `      
+                             }
+                             var gg_car = document.getElementsByClassName('gg_car')[0];
+                             gg_car.innerHTML = html;
+                             //console.log(html);
+                                  
+                        }
+                    } 
+                }
+                })
+                
+                     
+                </script>
+    </body>
+</html>
